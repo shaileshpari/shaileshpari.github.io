@@ -1,0 +1,236 @@
+/* =========================================
+   1. CSS VARIABLES (The "Settings" Menu)
+   ========================================= */
+:root {
+    --bg-color: #0d1117;        /* Very dark blue-gray (GitHub dark mode vibe) */
+    --card-bg: #161b22;         /* Slightly lighter for cards */
+    --text-main: #c9d1d9;       /* Soft white for readability */
+    --text-heading: #ffffff;    /* Pure white for headings */
+    --accent: #00ffd5;          /* Cyan (Our hacker/tech accent color) */
+    --accent-hover: #00ccaa;    /* Darker cyan for hover effects */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'Courier New', Courier, monospace; /* For techy vibes */
+}
+
+/* =========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes sizing elements much easier */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Makes clicking nav links scroll smoothly */
+}
+
+/* =========================================
+   3. TYPOGRAPHY & UTILITIES
+   ========================================= */
+h1, h2, h3 {
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+/* =========================================
+   4. HERO SECTION (Top of the page)
+   ========================================= */
+.hero {
+    height: 100vh; /* Takes up the full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    animation: fadeIn 1.5s ease-in-out; /* Simple fade-in animation */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero .tagline {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+/* =========================================
+   5. BUTTONS
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 0.5rem;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: var(--bg-color); /* Text turns dark when background turns cyan */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0, 255, 213, 0.3); /* Cyan glow */
+}
+
+/* =========================================
+   6. PROJECT CARDS (Grid Layout)
+   ========================================= */
+.project-grid {
+    display: grid;
+    /* Auto-fit creates responsive columns without media queries! */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lifts up on hover */
+    border-color: var(--accent); /* Border turns cyan on hover */
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+}
+
+.project-tech {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Special styling for the Featured Project */
+.featured-card {
+    border: 2px solid var(--accent);
+    background: linear-gradient(145deg, var(--card-bg), #1c2128);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   7. SKILLS & LISTS
+   ========================================= */
+.learning-list {
+    list-style-type: none; /* Removes default bullet points */
+    margin-bottom: 1.5rem;
+}
+
+.learning-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+/* Custom cyan checkmark/bullet */
+.learning-list li::before {
+    content: "▹"; 
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #8b949e;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background-color: rgba(0, 255, 213, 0.1); /* Very faint cyan background */
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 20px; /* Makes it pill-shaped */
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    border: 1px solid var(--accent);
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid #30363d;
+}
+
+.contact-links {
+    margin: 2rem 0;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* =========================================
+   9. ANIMATIONS
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero .tagline {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 3rem 1rem;
+    }
+}
