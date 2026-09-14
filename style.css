@@ -1,24 +1,24 @@
 /* =========================================
-   1. CSS VARIABLES (The "Settings" Menu)
+   1. CSS VARIABLES
    ========================================= */
 :root {
-    --bg-color: #0d1117;        /* Very dark blue-gray (GitHub dark mode vibe) */
-    --card-bg: #161b22;         /* Slightly lighter for cards */
-    --text-main: #c9d1d9;       /* Soft white for readability */
-    --text-heading: #ffffff;    /* Pure white for headings */
-    --accent: #00ffd5;          /* Cyan (Our hacker/tech accent color) */
-    --accent-hover: #00ccaa;    /* Darker cyan for hover effects */
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-main: #c9d1d9;
+    --text-heading: #ffffff;
+    --accent: #00ffd5;
+    --accent-hover: #00ccaa;
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --font-mono: 'Courier New', Courier, monospace; /* For techy vibes */
+    --font-mono: 'Courier New', Courier, monospace;
 }
 
 /* =========================================
-   2. GLOBAL RESET & BASE STYLES
+   2. GLOBAL RESET
    ========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Makes sizing elements much easier */
+    box-sizing: border-box;
 }
 
 body {
@@ -26,11 +26,11 @@ body {
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
-    scroll-behavior: smooth; /* Makes clicking nav links scroll smoothly */
+    scroll-behavior: smooth;
 }
 
 /* =========================================
-   3. TYPOGRAPHY & UTILITIES
+   3. TYPOGRAPHY
    ========================================= */
 h1, h2, h3 {
     color: var(--text-heading);
@@ -57,10 +57,10 @@ h2 {
 }
 
 /* =========================================
-   4. HERO SECTION (Top of the page)
+   4. HERO SECTION
    ========================================= */
 .hero {
-    min-height: 100vh; /* Takes up at least the full screen height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,7 +80,7 @@ h2 {
 }
 
 .hero h1 {
-    font-size: 5rem; /* MASSIVE font for your name */
+    font-size: 5rem;
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: var(--text-heading);
@@ -88,41 +88,33 @@ h2 {
 
 .hero-who {
     margin-bottom: 2rem;
+    min-height: 3rem; /* Prevents layout jumping when text changes */
 }
 
 .who-prefix {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--text-main);
-    margin-bottom: 1rem;
 }
 
-/* This makes the traits look like cool tech badges */
-.who-traits {
-    display: flex;
-    flex-wrap: wrap; /* Allows badges to wrap to the next line on small screens */
-    justify-content: center;
-    gap: 0.8rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.who-traits span {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid #30363d;
-    color: var(--text-heading);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    cursor: default;
-}
-
-/* Hover effect for the trait badges */
-.who-traits span:hover {
-    border-color: var(--accent);
+/* The typed text itself - in cyan accent color */
+#typed-text {
     color: var(--accent);
-    background-color: rgba(0, 255, 213, 0.05);
-    transform: translateY(-3px);
+    font-weight: bold;
+    font-family: var(--font-mono);
+}
+
+/* The blinking cursor */
+.cursor {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 100;
+    font-size: 1.5rem;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .hero .tagline {
@@ -144,23 +136,22 @@ h2 {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    transition: all 0.3s ease;
     margin: 0.5rem;
 }
 
 .btn:hover {
     background-color: var(--accent);
-    color: var(--bg-color); /* Text turns dark when background turns cyan */
-    transform: translateY(-3px); /* Slight lift effect */
-    box-shadow: 0 5px 15px rgba(0, 255, 213, 0.3); /* Cyan glow */
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 213, 0.3);
 }
 
 /* =========================================
-   6. PROJECT CARDS (Grid Layout)
+   6. PROJECT CARDS
    ========================================= */
 .project-grid {
     display: grid;
-    /* Auto-fit creates responsive columns without media queries! */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
@@ -174,8 +165,8 @@ h2 {
 }
 
 .project-card:hover {
-    transform: translateY(-5px); /* Lifts up on hover */
-    border-color: var(--accent); /* Border turns cyan on hover */
+    transform: translateY(-5px);
+    border-color: var(--accent);
 }
 
 .project-card h3 {
@@ -189,7 +180,6 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* Special styling for the Featured Project */
 .featured-card {
     border: 2px solid var(--accent);
     background: linear-gradient(145deg, var(--card-bg), #1c2128);
@@ -201,7 +191,7 @@ h2 {
    7. SKILLS & LISTS
    ========================================= */
 .learning-list {
-    list-style-type: none; /* Removes default bullet points */
+    list-style-type: none;
     margin-bottom: 1.5rem;
 }
 
@@ -211,7 +201,6 @@ h2 {
     position: relative;
 }
 
-/* Custom cyan checkmark/bullet */
 .learning-list li::before {
     content: "▹"; 
     color: var(--accent);
@@ -235,10 +224,10 @@ h2 {
 }
 
 .skill-tag {
-    background-color: rgba(0, 255, 213, 0.1); /* Very faint cyan background */
+    background-color: rgba(0, 255, 213, 0.1);
     color: var(--accent);
     padding: 0.5rem 1rem;
-    border-radius: 20px; /* Makes it pill-shaped */
+    border-radius: 20px;
     font-family: var(--font-mono);
     font-size: 0.9rem;
     border: 1px solid var(--accent);
@@ -279,14 +268,16 @@ footer {
         font-size: 1rem;
     }
     .hero h1 {
-        font-size: 3rem; /* Big, but fits on mobile screens */
+        font-size: 3rem;
     }
-    .who-traits {
-        gap: 0.5rem;
+    .who-prefix {
+        font-size: 1.2rem;
     }
-    .who-traits span {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
+    #typed-text {
+        font-size: 1.2rem;
+    }
+    .cursor {
+        font-size: 1.2rem;
     }
     .hero .tagline {
         font-size: 1rem;
