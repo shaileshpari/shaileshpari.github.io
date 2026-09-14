@@ -70,3 +70,35 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 800); // Small delay before starting
 });
+
+// ==========================================
+// SKILL BARS ANIMATION - Animate when scrolled into view
+// ==========================================
+
+// Get all skill progress bars
+const skillBars = document.querySelectorAll('.skill-progress');
+
+// Function to animate skill bars
+function animateSkillBars() {
+    skillBars.forEach(bar => {
+        const progressBar = bar;
+        const progressValue = progressBar.getAttribute('data-progress');
+        
+        // Check if the element is in the viewport
+        const rect = progressBar.getBoundingClientRect();
+        const isVisible = (rect.top <= window.innerHeight * 0.8);
+        
+        // If visible and not already animated
+        if (isVisible && !progressBar.classList.contains('animated')) {
+            // Animate the width
+            progressBar.style.width = progressValue + '%';
+            progressBar.classList.add('animated');
+        }
+    });
+}
+
+// Run on scroll
+window.addEventListener('scroll', animateSkillBars);
+
+// Also run once on page load (in case skills section is already visible)
+window.addEventListener('load', animateSkillBars);
