@@ -60,26 +60,77 @@ h2 {
    4. HERO SECTION (Top of the page)
    ========================================= */
 .hero {
-    height: 100vh; /* Takes up the full screen height */
+    min-height: 100vh; /* Takes up at least the full screen height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 1.5rem;
-    animation: fadeIn 1.5s ease-in-out; /* Simple fade-in animation */
+    padding: 2rem 1.5rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-small {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 5rem; /* MASSIVE font for your name */
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--text-heading);
+}
+
+.hero-who {
+    margin-bottom: 2rem;
+}
+
+.who-prefix {
+    font-size: 1.2rem;
+    color: var(--text-main);
     margin-bottom: 1rem;
 }
 
+/* This makes the traits look like cool tech badges */
+.who-traits {
+    display: flex;
+    flex-wrap: wrap; /* Allows badges to wrap to the next line on small screens */
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.who-traits span {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #30363d;
+    color: var(--text-heading);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Hover effect for the trait badges */
+.who-traits span:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: rgba(0, 255, 213, 0.05);
+    transform: translateY(-3px);
+}
+
 .hero .tagline {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 600px;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     color: var(--text-main);
+    line-height: 1.8;
 }
 
 /* =========================================
@@ -224,8 +275,18 @@ footer {
    10. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
+    .hero-small {
+        font-size: 1rem;
+    }
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3rem; /* Big, but fits on mobile screens */
+    }
+    .who-traits {
+        gap: 0.5rem;
+    }
+    .who-traits span {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
     }
     .hero .tagline {
         font-size: 1rem;
