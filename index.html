@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This section is the "brain" of the page. It holds settings, not visible content. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shailesh Kumar | Student Developer</title>
-    
-    <!-- We will create this style.css file in Phase 3 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HERO SECTION: The first thing people see -->
+    <!-- 1. HERO SECTION -->
     <header class="hero">
         <p class="hero-small">I am</p>
         <h1>Shailesh Kumar</h1>
         
         <div class="hero-who">
-            <p class="who-prefix">I am a</p>
-            <div class="who-traits">
-                <span>11th Grader</span>
-                <span>Programmer</span>
-                <span>Cybersecurity Student</span>
-                <span>Game Developer</span>
-                <span>Machine Enthusiast</span>
-                <span>Selected PRAYAAS Candidate</span>
-                <span>Football Lover ⚽</span>
-                <span>Motorsports Lover 🏎️</span>
-            </div>
+            <p class="who-prefix">
+                I am a <span id="typed-text"></span><span class="cursor">|</span>
+            </p>
         </div>
 
         <p class="tagline">
@@ -49,7 +38,7 @@
         </p>
     </section>
 
-    <!-- 3. FEATURED PROJECT: Project Sentinel -->
+    <!-- 3. FEATURED PROJECT -->
     <section id="featured" class="container">
         <h2>🛡️ Featured Project</h2>
         <div class="project-card featured-card">
@@ -64,39 +53,34 @@
         </div>
     </section>
 
-    <!-- 4. OTHER PROJECTS SECTION -->
+    <!-- 4. OTHER PROJECTS -->
     <section id="projects" class="container">
         <h2>Other Projects</h2>
         <div class="project-grid">
-            
             <div class="project-card">
                 <h3>🔐 Password Generator</h3>
                 <p class="project-tech">Python</p>
                 <p>A beginner Python project that generates random, secure passwords. Planning to add a GUI and custom length options soon.</p>
             </div>
-
             <div class="project-card">
                 <h3>📝 Notes Maker</h3>
                 <p class="project-tech">Python / Future: Web</p>
                 <p>A simple application to create, edit, delete, and search notes, currently saving locally. Working toward a web version.</p>
             </div>
-
             <div class="project-card">
                 <h3>🎮 Tic-Tac-Toe</h3>
                 <p class="project-tech">Python / Java</p>
                 <p>My first step into game logic and conditional programming. A classic console-based game.</p>
             </div>
-
             <div class="project-card">
                 <h3>🚀 Space Dash</h3>
                 <p class="project-tech">Game Dev Experiment</p>
                 <p>An ongoing game project idea to demonstrate my programming and game-development experimentation.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- 5. CYBERSECURITY JOURNEY SECTION -->
+    <!-- 5. CYBERSECURITY JOURNEY -->
     <section id="cybersecurity" class="container">
         <h2>🔐 Cybersecurity Journey</h2>
         <p>
@@ -113,7 +97,7 @@
         <p class="disclaimer"><em>Note: All my cybersecurity projects are strictly educational and performed in controlled, authorized environments.</em></p>
     </section>
 
-    <!-- 6. SKILLS SECTION -->
+    <!-- 6. SKILLS -->
     <section id="skills" class="container">
         <h2>Skills & Technologies</h2>
         <div class="skills-grid">
@@ -127,7 +111,7 @@
         </div>
     </section>
 
-    <!-- 7. FOOTER / CONTACT SECTION -->
+    <!-- 7. FOOTER -->
     <footer id="contact">
         <h2>Let's Connect</h2>
         <p>I'm always open to discussing new project ideas, electronics, or cybersecurity concepts.</p>
@@ -139,5 +123,7 @@
         <p class="copyright">© 2026 Shailesh Kumar. Built with curiosity and code.</p>
     </footer>
 
+    <!-- This connects our JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
